@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>高質感黑白棋 | Othello</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Google Fonts for modern typography -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Othello</h1>
+            <p class="subtitle">Premium Reversi Experience</p>
+        </header>
+
+        <main>
+            <div class="game-info glass-panel">
+                <div class="player-stat" id="black-stat">
+                    <div class="disc mini-disc black-disc"></div>
+                    <div class="score" id="black-score">2</div>
+                </div>
+                
+                <div class="turn-indicator">
+                    <span id="turn-text">黑子回合</span>
+                </div>
+
+                <div class="player-stat" id="white-stat">
+                    <div class="score" id="white-score">2</div>
+                    <div class="disc mini-disc white-disc"></div>
+                </div>
+            </div>
+
+            <div class="board-container">
+                <div id="board" class="board"></div>
+            </div>
+
+            <div class="controls">
+                <button id="restart-btn" class="glass-btn">重新開始</button>
+                <div class="mode-selector glass-panel">
+                     <label>
+                         <input type="radio" name="game-mode" value="pvp" checked> 單機雙人
+                     </label>
+                     <label>
+                         <input type="radio" name="game-mode" value="pva"> 單人打電腦 (黑子)
+                     </label>
+                </div>
+            </div>
+        </main>
+        
+        <!-- Game Over Modal -->
+        <div id="game-over-modal" class="modal hidden">
+            <div class="modal-content glass-panel">
+                <h2 id="winner-text">黑子獲勝！</h2>
+                <div class="final-score">
+                    <span id="final-black">黑: 0</span>
+                    <span id="final-white">白: 0</span>
+                </div>
+                <button id="modal-restart-btn" class="glass-btn primary-btn">再玩一局</button>
+            </div>
+        </div>
+    </div>
+    
+    <script src="game.js"></script>
+</body>
+</html>
